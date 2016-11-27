@@ -6,6 +6,7 @@ var contatoService = require('services/contato.service');
 // routes
 router.post('/register', registerContato);
 router.get('/current', getCurrentContato);
+router.get('/all', getAll);
 router.put('/:_id', updateContato);
 router.delete('/:_id', deleteContato);
 
@@ -35,6 +36,19 @@ function getCurrentContato(req, res) {
         });
 }
 
+function getAll(req,res){
+     contatoService.getAll()
+        .then(function (contatos) {
+            if (contatos) {
+                res.send(contatos);
+            } else {
+                res.sendStatus(404);
+            }
+        })
+        .catch(function (err) {
+            res.status(400).send(err);
+        });
+}
 
 function updateContato(req, res) {
     var nomeId = req.nome.sub;
