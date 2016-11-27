@@ -1,5 +1,5 @@
 {
-    "name": "CadApp",
+    "name": "app",
     "version": "1.0.0",
     "description": "MEAN Stack - Login e Cadastro",
     "dependencies": {
