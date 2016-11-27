@@ -35,7 +35,7 @@
         }
 
         function Create(nome) {
-            return $http.post('/api/contatos', nome).then(handleSuccess, handleError);
+            return $http.post('/api/contatos/register', nome).then(handleSuccess, handleError);
         }
 
         function Update(nome) {

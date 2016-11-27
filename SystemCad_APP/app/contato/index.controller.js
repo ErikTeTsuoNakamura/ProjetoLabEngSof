@@ -21,6 +21,16 @@
         }
 
         function saveContato() {
+            ContatoService.Create(vm.nome)
+                .then(function () {
+                    FlashService.Success('Contato Atualizado.');
+                })
+                .catch(function (error) {
+                    FlashService.Error(error);
+                });
+        }
+
+        function atualizaContato() {
             ContatoService.Update(vm.nome)
                 .then(function () {
                     FlashService.Success('Contato Atualizado.');
@@ -29,6 +39,7 @@
                     FlashService.Error(error);
                 });
         }
+
 
         function deleteContato() {
             ContatoService.Delete(vm.nome._id)

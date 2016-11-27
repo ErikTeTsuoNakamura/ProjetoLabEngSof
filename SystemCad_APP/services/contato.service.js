@@ -16,6 +16,7 @@ service.delete = _delete;
 
 module.exports = service;
 
+
 function getById(_id) {
     var deferred = Q.defer();
 
@@ -46,6 +47,7 @@ function create(nomeParam) {
                 createContato();
             }
         });
+
 
     function createContato() {
 

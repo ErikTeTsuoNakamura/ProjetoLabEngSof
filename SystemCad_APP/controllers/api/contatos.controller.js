@@ -35,6 +35,7 @@ function getCurrentContato(req, res) {
         });
 }
 
+
 function updateContato(req, res) {
     var nomeId = req.nome.sub;
 
