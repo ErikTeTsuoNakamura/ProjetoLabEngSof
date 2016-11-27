@@ -18,6 +18,13 @@
                 controllerAs: 'vm',
                 data: { activeTab: 'home' }
             })
+            .state('contato',{
+                url: '/contato',
+                templateUrl: 'contato/index.html',
+                controller: 'Contato.IndexController',
+                controllerAs: 'vm',
+                data: { activeTab: 'contato' }
+            })
             .state('account', {
                 url: '/account',
                 templateUrl: 'account/index.html',
