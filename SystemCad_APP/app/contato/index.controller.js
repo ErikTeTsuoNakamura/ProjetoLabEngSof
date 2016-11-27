@@ -11,13 +11,12 @@
         vm.nome = null;
         vm.saveContato = saveContato;
         vm.deleteContato = deleteContato;
+        vm.listaContatos = listaContatos;
 
         initController();
 
         function initController() {
-            ContatoService.GetCurrent().then(function (nome) {
-                vm.nome = nome;
-            });
+              listaContatos(); 
         }
 
         function saveContato() {
@@ -50,6 +49,12 @@
                 .catch(function (error) {
                     FlashService.Error(error);
                 });
+        }
+
+        function listaContatos() {
+            ContatoService.GetAll().then(function (retorno){
+                vm.listaContatos = retorno.contatos;
+            });
         }
     }
 

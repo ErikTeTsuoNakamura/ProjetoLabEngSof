@@ -23,7 +23,7 @@
         }
 
         function GetAll() {
-            return $http.get('/api/contatos').then(handleSuccess, handleError);
+            return $http.get('/api/contatos/all').then(handleSuccess, handleError);
         }
 
         function GetById(_id) {

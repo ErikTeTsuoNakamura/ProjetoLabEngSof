@@ -28,3 +28,41 @@
         </div>
     </form>
 </div>
+
+<h3>Contatos Cadastrados</h3>
+
+<div class="form-container">
+<form method="get">
+  <div>
+    <label>Filtrar Por Nome</label>
+    <input type="text" ng-model="filtro">
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <tr>
+          <th>
+            Nome
+          </th>
+          <th>
+            Fone
+          </th>
+          <th>
+            E-mail
+          </th>
+        </tr>
+      <tr ng-repeat="contato in vm.listaContatos">
+          <td>
+            {{contato.nome}}
+          </td>
+          <td>
+            {{contato.fone}}
+          </td>
+          <td>
+            {{contato.email}}
+          </td>
+      </tr>
+    </table>
+  </div>
+</form>
+</div>

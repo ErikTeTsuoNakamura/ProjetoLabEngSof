@@ -9,6 +9,7 @@ db.bind('contatos');
 
 var service = {};
 
+service.getAll = getAll;
 service.getById = getById;
 service.create = create;
 service.update = update;
@@ -25,6 +26,22 @@ function getById(_id) {
 
         if (nome) {
             deferred.resolve(_.omit(nome));
+        } else {
+            deferred.resolve();
+        }
+    });
+
+    return deferred.promise;
+}
+
+function getAll() {
+        var deferred = Q.defer();
+
+    db.contatos.find({}, function (err, contatos) {
+        if (err) deferred.reject(err.name + ': ' + err.message);
+
+        if (contatos) {
+            deferred.resolve(_.omit(contatos));
         } else {
             deferred.resolve();
         }
