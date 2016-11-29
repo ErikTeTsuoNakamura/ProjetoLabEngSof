@@ -23,6 +23,7 @@
             ContatoService.Create(vm.nome)
                 .then(function () {
                     FlashService.Success('Contato Atualizado.');
+                    listaContatos(); 
                 })
                 .catch(function (error) {
                     FlashService.Error(error);
@@ -53,7 +54,7 @@
 
         function listaContatos() {
             ContatoService.GetAll().then(function (retorno){
-                vm.listaContatos = retorno.contatos;
+                vm.listaContatos = retorno;
             });
         }
     }

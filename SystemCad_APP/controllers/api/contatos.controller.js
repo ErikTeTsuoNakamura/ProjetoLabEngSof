@@ -40,7 +40,7 @@ function getAll(req,res){
      contatoService.getAll()
         .then(function (contatos) {
             if (contatos) {
-                res.send(contatos);
+                res.json(contatos);
             } else {
                 res.sendStatus(404);
             }

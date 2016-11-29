@@ -35,13 +35,13 @@ function getById(_id) {
 }
 
 function getAll() {
-        var deferred = Q.defer();
+    var deferred = Q.defer();
 
-    db.contatos.find({}, function (err, contatos) {
+    db.contatos.find().toArray(function(err, contatos) {
         if (err) deferred.reject(err.name + ': ' + err.message);
 
         if (contatos) {
-            deferred.resolve(_.omit(contatos));
+            deferred.resolve(contatos);
         } else {
             deferred.resolve();
         }
